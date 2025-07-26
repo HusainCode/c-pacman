@@ -1,5 +1,7 @@
 #include "../include/pacman.h"
 #include <stdio.h>
+#include <SDL2/SDL.h>
+
 
 
 // Initialize Pac-Man at givin position
@@ -9,6 +11,7 @@ Pacman pacman_init(int x, int y){
     p.y = y;
     p.lives = 3; // 3 lives just like the real game
     p.direction = 0;
+    SDL_Color pacmanColor[1]; // yellow
 
     return p;
 

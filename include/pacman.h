@@ -3,14 +3,14 @@
 
 typedef struct pacman
 {
-    int x;
-    int y;
-    int direction;
-    int lives;
+    int *x;
+    int *y;
+    int *dx, *dy;  // direction (pointers)
+    int *lives;
 } Pacman;
 
 // create pacman at a position
-Pacman pacman_init(int x, int y);
+Pacman pacmanInit(int x, int y);
 
 // Move pacman
 void pacmanMove(Pacman *p, int dx, int dy);
