@@ -3,24 +3,22 @@
 
 typedef enum { BLINKY, PINKY, INKY, CLYDE } GhostType; // ghost type
 
-Ghost ghostInit(int x, int y) {
-    Ghost ghost;
-    ghost.x = x;
-    ghost.y = y;
-    ghost.dx = 0;
-    ghost.dy = 0;
-    ghost.isScared = false;
-    ghost.respawn = false;
-    GhostType type;
+void ghostInit(Ghost *ghost, int x, int y, GhostType type) {
+    ghost->x = x;
+    ghost->y = y;
+    ghost->dx = 0;
+    ghost->dy = 0;
+    ghost->isScared = false;
+    ghost->respawn = false;
+    ghost->type = type;
 
     // Default color scheme
-    ghost.colors[0] = (SDL_Color){255, 0, 0, 255};     // red
-    ghost.colors[1] = (SDL_Color){255, 105, 180, 255}; // pink
-    ghost.colors[2] = (SDL_Color){255, 255, 0, 255};   // yellow
-    ghost.colors[3] = (SDL_Color){0, 255, 0, 255};     // green
-    ghost.colors[4] = (SDL_Color){0,0,255,255};  // originalColor
+    // ghost->colors[0] = (SDL_Color){255, 0, 0, 255};     // red
+    // ghost->colors[1] = (SDL_Color){255, 105, 180, 255}; // pink
+    // ghost->colors[2] = (SDL_Color){255, 255, 0, 255};   // yellow
+    // ghost->colors[3] = (SDL_Color){0, 255, 0, 255};     // green
+    // ghost->colors[4] = (SDL_Color){0,0,255,255};  // originalColor
 
-    return ghost;
 }
 
 

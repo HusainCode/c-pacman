@@ -36,14 +36,21 @@ typedef struct ghost
     int dx,dy; // direction
     bool isScared; // Vulnerability state
     bool respawn; // Needs to respawn
-    SDL_Color colors[5]; // red, pink, yellow, green
-    SDL_Color color; // current active color
+    SDL_Color color;     // current active color
     GhostType type; // Ghost behavior type
 
 } Ghost;
 
+
+extern const SDL_Color GHOST_COLOR_RED;
+extern const SDL_Color GHOST_COLOR_PINK;
+extern const SDL_Color GHOST_COLOR_BLUE;
+extern const SDL_Color GHOST_COLOR_YELLOW;
+extern const SDL_Color GHOST_SCARED_COLOR;
+
+
 // Initializes a ghost at position (x, y)
-Ghost ghostInit(int x, int y);
+void ghostInit(Ghost *ghost, int x, int y);
 
 // Moves a ghost by dx, dy
 // dx: change in x (left/right)
