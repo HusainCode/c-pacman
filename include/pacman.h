@@ -6,6 +6,7 @@ typedef struct pacman
     int *x;
     int *y;
     int *dx, *dy;  // direction (pointers)
+    int *direction;
     int *lives;
 } Pacman;
 
