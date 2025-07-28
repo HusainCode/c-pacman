@@ -1,36 +1,80 @@
 #include "../include/ghost.h"
 #include <SDL2/SDL.h>
 
-typedef enum { BLINKY, PINKY, INKY, CLYDE } GhostType; // ghost type
 
-void ghostInit(Ghost *ghost, int x, int y, GhostType type) {
+
+
+
+
+void ghostInit(Ghost *ghost, int x, int y, GhostType type, GhostColor *ghostColor ) {
     ghost->x = x;
     ghost->y = y;
     ghost->dx = 0;
     ghost->dy = 0;
     ghost->isScared = false;
     ghost->respawn = false;
-    ghost->type = type;
-
+    
+    ghostColor->red    = (SDL_Color){255, 0, 0, 255};       // [0] BLINKY - red
+    ghostColor->pink   = (SDL_Color){255, 105, 180, 255};   // [1] PINKY - pink
+    ghostColor->blue   = (SDL_Color){0, 0, 255, 255};       // [2] INKY - blue
+    ghostColor->yellow = (SDL_Color){255, 255, 0, 255};     // [3] CLYDE - yellow
+    ghostColor->scared = (SDL_Color){0, 255, 255, 255};     // [4] SCARED - cyan
+ 
     // Default color scheme
-    // ghost->colors[0] = (SDL_Color){255, 0, 0, 255};     // red
-    // ghost->colors[1] = (SDL_Color){255, 105, 180, 255}; // pink
-    // ghost->colors[2] = (SDL_Color){255, 255, 0, 255};   // yellow
-    // ghost->colors[3] = (SDL_Color){0, 255, 0, 255};     // green
-    // ghost->colors[4] = (SDL_Color){0,0,255,255};  // originalColor
+    switch (type)
+    {
+        case BLINKY:
+        ghost->color = ghostColor->red;
+        break;
+
+        case PINKY:
+        ghost->color = ghostColor->pink;
+        break;
+
+        case INKY:
+        ghost->color = ghostColor->blue;
+        break;
+
+        case CLYDE:
+        ghost->color = ghostColor->yellow;
+        break;
+
+        case SCARED:
+        ghost->color = ghostColor->scared;
+        break;
+
+
+    }
+
 
 }
 
 
 void makeGhostVulnerbale(bool isScared){
-    ghost.isScared = isScared;
-    ghost.color = isScared ? (SDL_Color){0,0,255,255}: ghost->colors[4];
+  
 }
 
-void ghostMove(int dx, int dy){
-
+int isWall(int x, int y) {
+    if (x < 0 || y < 0 || x >= MAP_WIDTH || y >= MAP_HEIGHT) {
+        return 1;
+    }
+    return gameMap[y][x] == 1;
 }
 
+// Moves the ghost if the new position isn't a wall
+void ghostMove(Ghost *g, int dx, int dy) {
+    int newX = g->x + dx;
+    int newY = g->y + dy;
+
+    if (!isWall(newX, newY)) {
+        g->x = newX;
+        g->y = newY;
+        printf("Ghost moved to (%d, %d)\n", g->x, g->y);
+    } else {
+    
+        printf("Ghost hit a wall at (%d, %d)\n", newX, newY);
+    }
+}
 void updateGhostTarget(Ghost *ghost, int pacmanX, 
     int pacmanY, int pacmanDX, int pacmanDY, int blinkyX, int blinkyY){
 
