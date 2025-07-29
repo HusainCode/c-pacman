@@ -1,9 +1,16 @@
-#ifndef GUI_H
-#define GUI_H
+#pragma once
+
+#define MAP_WIDTH  28
+#define MAP_HEIGHT 31
+
 
 #include <SDL2/SDL.h>
 
-void gui_init();
-void gui_quit();
+void guiInit();
+void guiQuit();
 
-#endif
+//Present the current frame (flip the buffer)
+void guiPresent();
+
+
+int isWall(int x, int y) {};

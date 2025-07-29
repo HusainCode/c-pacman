@@ -26,7 +26,8 @@ typedef enum {
     BLINKY, // 0 
     PINKY, // 1 
     INKY, // 2
-    CLYDE // 3
+    CLYDE, // 3
+    SCARED
 
 } GhostType;
 
@@ -42,15 +43,22 @@ typedef struct ghost
 } Ghost;
 
 
-extern const SDL_Color GHOST_COLOR_RED;
-extern const SDL_Color GHOST_COLOR_PINK;
-extern const SDL_Color GHOST_COLOR_BLUE;
-extern const SDL_Color GHOST_COLOR_YELLOW;
-extern const SDL_Color GHOST_SCARED_COLOR;
+
+typedef struct ghostColor
+{
+  SDL_Color red;
+  SDL_Color pink;
+  SDL_Color blue;
+  SDL_Color yellow;
+  SDL_Color scared;
+
+}GhostColor;
+
+ 
 
 
 // Initializes a ghost at position (x, y)
-void ghostInit(Ghost *ghost, int x, int y);
+void ghostInit(Ghost *ghost, int x, int y, GhostType type, GhostColor *ghostColor );
 
 // Moves a ghost by dx, dy
 // dx: change in x (left/right)
