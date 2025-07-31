@@ -23,7 +23,7 @@ void pacmanMove(Pacman *p, int dx, int dy){
     p->y += dy;
 }
 
-void pacmanDraw(const Pacman *p){
-    if(!p) return;
-    printf("PacMan is at(%d, %d)\n", p->x, p->y);
-}
+// void pacmanDraw(const Pacman *p){
+//     if(!p) return;
+//     printf("PacMan is at(%d, %d)\n", p->x, p->y);
+// }

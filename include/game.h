@@ -13,7 +13,25 @@ typedef struct {
     int id; 
 } Ghost;
 
+typedef struct 
+{
+    int x;
+    int y;
+    int pacmanId;
+
+}Pacman;
+
 int isWall(int x, int y);
-void ghostMove(Ghost *g, int dx, int dy);
+
+int initGameStats();
+
+ 
+ int gameScore();
+ void pauseGame();
+
+ 
+
+
+ 
 
 #endif // GAME_H

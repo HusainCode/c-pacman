@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include "../include/ghost.h"
+#include "../include/gui.h"
+#include "../include/pacman.h""
+#include <SDL2/SDL.h>
 
 
 
-int main() {
-    printf("Welcome to Pac-Man!\n");
-    return 0;
-}
+
+int initGameStats();
+
