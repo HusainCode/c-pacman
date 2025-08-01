@@ -4,34 +4,27 @@
 #define MAP_WIDTH 28
 #define MAP_HEIGHT 31
 
+// Game map definition (1 = wall, 0 = path, etc.)
 extern int gameMap[MAP_HEIGHT][MAP_WIDTH];
 
 // Ghost entity structure
 typedef struct {
     int x;
     int y;
-    int id; 
+    int id;
 } Ghost;
 
-typedef struct 
-{
+// Pacman entity structure
+typedef struct {
     int x;
     int y;
-    int pacmanId;
+    int id;
+} Pacman;
 
-}Pacman;
-
+// Game logic functions
 int isWall(int x, int y);
-
-int initGameStats();
-
- 
- int gameScore();
- void pauseGame();
-
- 
-
-
- 
+int initGameState(void);
+int getGameScore(void);
+void pauseGame(void);
 
 #endif // GAME_H
