@@ -21,12 +21,12 @@ int main() {
 
 
 void runGame() {
-    int running = 1;
+    int game_running = 1;
 
-    while (running) {
+    while (game_running) {
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
-                running = 0;
+                game_running = 0;
             }
 
             if (event.type == SDL_KEYDOWN) {
