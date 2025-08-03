@@ -10,6 +10,9 @@
 
 int gameMap[MAP_HEIGHT][MAP_WIDTH]; // global map
 
+
+void gameIntro();
+
 // Initialize game state: map, score, positions, etc.
 int initGameStats(void) {
     // Clear map
@@ -33,3 +36,5 @@ int initGameStats(void) {
     // printf("Game initialized!\n");
     return 0; // success
 }
+
+

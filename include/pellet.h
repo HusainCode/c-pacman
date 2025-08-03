@@ -1,15 +1,12 @@
 #pragma once
 
+#include "../include/game.h"
 
-struct pellet
-{
-    int location = 0;
-
-};
+extern int map[MAP_HEIGHT][MAP_WIDTH]; 
 
 
-void spwan_pellet(int x, int y);
+void spwanPellet(int x, int y); // add pellte to map
 
-int isPelletAt(int x, int y);
+int isPelletAt(int x, int y); // checl for pellet at tile
 
-void collect_pellet(int x, int y);
+void collectPellet(int x, int y); //consume pellter at tile

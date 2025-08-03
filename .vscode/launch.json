@@ -1,16 +1,35 @@
 {
   "version": "0.2.0",
   "configurations": [
-    
+    {
+      "name": "Debug fun.c",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/fun.out",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "/home/husaincode/c-pacman",
-      "program": "/home/husaincode/c-pacman/build/Debug/outDebug",
+      "externalConsole": false,
+      "cwd": "/home/husaincode/c-pacman/src",
+      "program": "/home/husaincode/c-pacman/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

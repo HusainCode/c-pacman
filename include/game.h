@@ -22,6 +22,8 @@ typedef struct {
 } Pacman;
 
 // Game logic functions
+
+void gameIntro();
 int isWall(int x, int y);
 int initGameState(void);
 int getGameScore(void);

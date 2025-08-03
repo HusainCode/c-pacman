@@ -1,4 +1,5 @@
 #include "pellet.h"
+#include "../include/game.h"
 
 
 void spwan_pellet(int x, int y);
