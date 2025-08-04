@@ -28,5 +28,6 @@ int isWall(int x, int y);
 int initGameState(void);
 int getGameScore(void);
 void pauseGame(void);
+void drawMap(SDL_Renderer* renderer);
 
 #endif // GAME_H

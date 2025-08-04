@@ -38,3 +38,7 @@ int initGameStats(void) {
 }
 
 
+void drawMap(SDL_Renderer* renderer){
+    // FILE THIS LATER
+
+}
