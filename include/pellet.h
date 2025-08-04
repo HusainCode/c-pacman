@@ -8,12 +8,22 @@
 #define TITLE_PELLET 2 // normal pellet
 #define TITLE_POWER_PELLET 3 // power-up pellet
 
+#define MAX_REGULAR_PELLETS 240
+#define MAX_POWER_PELLETS 4
+
 
 // Global pellte state
 extern int map[MAP_HEIGHT][MAP_WIDTH]; // Game tilemap
 extern int score;                      // Player score
 extern int pelltesRemaining;          // Remaining pellets on the map
 extern int powerPelltesRemaining;
+
+
+typedef struct pellet
+{
+    int x, y;
+} Pellet;
+
 // Pellet operations 
 // Pellet lifecycle
 void spawnPellet(int x, int y);
