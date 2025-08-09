@@ -53,7 +53,7 @@ void runGame() {
     gui_quit();
 }
 
-
+printf("testing");
 void initEverything(void){
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Init(SDL_INIT_AUDIO);
@@ -65,4 +65,5 @@ void initEverything(void){
     handleInput();
     checkGameCollisions();
     restGame();
+    
 }
