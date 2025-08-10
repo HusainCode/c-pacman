@@ -4,6 +4,8 @@
 
 
 
+
+
 void spwan_pellet(int x, int y){
     if(gameMap[y][x] == TITLE_EMPTY){
         gameMap[y][x] = TITLE_PELLET;
@@ -46,7 +48,7 @@ void collect_pellet(int x, int y){
 void resetPellets(void){
     if(powerPelltesRemaining == 0 && pelltesRemaining == 0){
         for(int y = 0; y < MAP_HEIGHT; y++){
-          // STOPED HERE
+          
         }
     }
 }
