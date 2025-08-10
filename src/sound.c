@@ -1,6 +1,8 @@
 #include "../include/sound.h"
 #include <stdio.h>
 #include <stdbool.h>    
+#include "raylib.h"
+
 
 static bool sound_enabled = false;
 
@@ -12,7 +14,7 @@ void sound_init(void) {
 
 bool sound_is_enabled(void) {
     return sound_enabled;
-}
+}l
 
 void sound_enable(void) {
     sound_enabled = true;
