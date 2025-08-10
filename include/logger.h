@@ -10,6 +10,6 @@
 #define LOG_ERROR(fmt, ...) log_message("ERROR", __FILE__,__LINE__, fmt, ##__VA_ARGS__)
 
 // Core logging function
-void log_message(const char *level, const char *file, int line, const *fmt, ...);
+void log_message(const char *level, const char *file, int line, const char *fmt, ...);
 
  

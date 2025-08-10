@@ -1,8 +1,6 @@
  #pragma once
 
-
-#include <stdbool.h>
-#include <SDL2/SDL_mixer.h>
+#include <stdbool.h>    
 
 /// Initializes the audio system (must be called before using any audio functions)
 bool AudioInit(void);
