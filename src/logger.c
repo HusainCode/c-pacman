@@ -1,5 +1,5 @@
 #include "../include/logger.h"
-
+// add mroe logs
 
 // Central log function
 void log_message(const char *level, const char *file, int line, const char *fmt, ...) {
