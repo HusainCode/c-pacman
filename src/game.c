@@ -38,7 +38,20 @@ int initGameStats(void) {
 }
 
 
-void drawMap(SDL_Renderer* renderer){
-    // FILE THIS LATER
+void drawMap(SDL_Renderer* renderer) {
+    int tileSize = 20; // pixels per tile
 
+    for (int y = 0; y < MAP_HEIGHT; ++y) {
+        for (int x = 0; x < MAP_WIDTH; ++x) {
+            SDL_Rect rect = { x * tileSize, y * tileSize, tileSize, tileSize };
+
+            if (gameMap[y][x] == 1) {
+                SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255); // blue walls
+                SDL_RenderFillRect(renderer, &rect);
+            } else {
+                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);   // black background
+                SDL_RenderFillRect(renderer, &rect);
+            }
+        }
+    }
 }
