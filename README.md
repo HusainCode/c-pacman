@@ -21,14 +21,6 @@ This project focuses on performance, clean design, and the fundamentals of game 
 
 ---
 
-## 🚀 Why This Project?
-
-- Practice **C programming** through a real-time game  
-- Explore **game loops**, **collision detection**, and **AI** in a resource-constrained setting  
-- Show how complex behavior (like Pac-Man’s ghosts) can emerge from simple rules  
-
----
-
 ## 🛠️ Build & Run
 
 ```bash
